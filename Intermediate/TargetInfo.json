@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "PentiumDual",
+			"Path": "C:\\Users\\Alexa\\Documents\\Unreal Projects\\PentiumDual\\Source\\PentiumDual.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PentiumDualEditor",
+			"Path": "C:\\Users\\Alexa\\Documents\\Unreal Projects\\PentiumDual\\Source\\PentiumDualEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

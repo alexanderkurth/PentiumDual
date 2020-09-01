@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\PentiumDual.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{425592A8-9C4B-4CCE-A6EF-609915957EB8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PentiumDual.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\PentiumDualEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{8792D882-16F4-4541-A526-5778944F83C7}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\PentiumDual">
+      <UniqueIdentifier>{79538013-102E-4C5B-A98E-2037B3B95317}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\PentiumDual\ai_tags.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\AttackNotifyState.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\AttackNotifyState.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PentiumDual\blackboard_keys.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\BTService_ChangeSpeed.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\BTService_ChangeSpeed.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\BTService_IsPlayerFireRange.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\BTService_IsPlayerFireRange.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\CharacterBase.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\CharacterBase.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\ChasePlayer.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\ChasePlayer.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\FindPathPoint.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\FindPathPoint.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\FindPlayerLocation.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\FindPlayerLocation.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\FindRandomLocation.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\FindRandomLocation.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\HealthBar.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\HealthBar.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\IncrementPathIndex.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\IncrementPathIndex.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PatrolPath.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PatrolPath.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\PentiumDual\PentiumDual.Build.cs">
+      <Filter>Source\PentiumDual</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\PentiumDual\PentiumDual.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PentiumDual.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PentiumDualCharacter.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PentiumDualCharacter.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PentiumDualGameMode.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PentiumDualGameMode.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PentiumDual_AICharacter.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PentiumDual_AICharacter.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PentiumDual_AIController.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PentiumDual_AIController.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\PlayerControllerBase.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\PlayerControllerBase.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\RangeAttack.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\RangeAttack.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\StopInvestigating.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\StopInvestigating.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
