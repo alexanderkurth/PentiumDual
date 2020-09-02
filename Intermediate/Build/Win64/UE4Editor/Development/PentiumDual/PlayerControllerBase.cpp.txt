@@ -1,3 +1,14 @@
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\Definitions.PentiumDual.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\PlayerControllerBase.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\PentiumDualCharacter.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\CharacterBase.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\CharacterBase.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PentiumDualCharacter.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PlayerControllerBase.generated.h

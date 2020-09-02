@@ -18,10 +18,6 @@ class PENTIUMDUAL_API APlayerControllerBase : public APlayerController
 public:
 	APlayerControllerBase();
 
-	UPROPERTY(Transient, EditAnywhere, BlueprintReadWrite)
-	APentiumDualCharacter* character;
-
-
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;

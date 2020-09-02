@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x50DF18DE,
+				0xAD00B195,
 				0x4DA44F76,
 				METADATA_PARAMS(nullptr, 0)
 			};

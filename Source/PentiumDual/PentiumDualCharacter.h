@@ -6,7 +6,10 @@
 #include "GameFramework/Character.h"
 #include "Sound/SoundBase.h"
 #include "CharacterBase.h"
+#include "Engine/DataTable.h"
+
 #include "PentiumDualCharacter.generated.h"
+
 
 UCLASS(config=Game)
 class APentiumDualCharacter : public ACharacterBase
@@ -59,11 +62,19 @@ protected:
 
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
-
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
+
+	/**
+	 * AttackStart - Triggered when the player initiate an attack
+	 */
+	void AttackStart();
+	/**
+	 * AttackEnd - Triggered when the player stops an attack
+	 */
+	void AttackEnd();
 
 public:
 	/** Returns CameraBoom subobject **/
@@ -78,6 +89,7 @@ public:
 
 	void Tick(float const DeltaTime) override;
 
+
 private:
 
 	class UAIPerceptionStimuliSourceComponent* stimulus;
@@ -89,6 +101,10 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* montage;
+
+	//melee fist montage
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
+	UAnimMontage* melee_fist_attack_montage;
 
 	void on_attack();
 	void on_distract();

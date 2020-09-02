@@ -17,6 +17,7 @@
 #include "Components/WidgetComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "HealthBar.h"
+#include "Engine.h"
 
 //////////////////////////////////////////////////////////////////////////
 // APentiumDualCharacter
@@ -71,8 +72,13 @@ APentiumDualCharacter::APentiumDualCharacter() :
 			widget_component->SetWidgetClass(widget_class.Class);
 		}
 	}
-}
 
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> MeleeFistAttackMontageObecjt(TEXT("AnimMontage'/Game/Animations/MeleeFistAttackMontage.MeleeFistAttackMontage'"));
+	if (MeleeFistAttackMontageObecjt.Succeeded())
+	{
+		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
+	}
+}
 
 //////////////////////////////////////////////////////////////////////////
 // Input
@@ -103,10 +109,31 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &APentiumDualCharacter::OnResetVR);
 	
 
-	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APentiumDualCharacter::on_attack);
+	//PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APentiumDualCharacter::on_attack);
 	PlayerInputComponent->BindAction("Distract", IE_Pressed, this, &APentiumDualCharacter::on_distract);
+
+	//attack functionality
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APentiumDualCharacter::AttackStart);
+	PlayerInputComponent->BindAction("Attack", IE_Released, this, &APentiumDualCharacter::AttackEnd);
 }
 
+
+void APentiumDualCharacter::AttackStart()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Attack Start"));
+	// generate a rendom number between 1 and 2
+	int montageSectionIndex = rand() % 3 + 1;
+
+	//Create a new string reference
+	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
+	PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
+}
+
+void APentiumDualCharacter::AttackEnd()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Attack End"));
+
+}
 
 float APentiumDualCharacter::get_health() const
 {
@@ -132,6 +159,7 @@ void APentiumDualCharacter::Tick(float const DeltaTime)
 		uw->set_bar_value_percent(health / max_health);
 	}
 }
+
 
 void APentiumDualCharacter::setup_stimulus()
 {
@@ -171,6 +199,7 @@ void APentiumDualCharacter::on_attack_overlap_end(UPrimitiveComponent* const ove
 {
 
 }
+
 
 void APentiumDualCharacter::OnResetVR()
 {
@@ -227,3 +256,5 @@ void APentiumDualCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+
