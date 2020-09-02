@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xAD00B195,
-				0x4DA44F76,
+				0x2B817499,
+				0x2B29225F,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

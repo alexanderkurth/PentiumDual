@@ -28,8 +28,5 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision, meta = (AllowPrivateAccess = "true"))
-		class UBoxComponent* right_fist_collision_box;
-
 
 };

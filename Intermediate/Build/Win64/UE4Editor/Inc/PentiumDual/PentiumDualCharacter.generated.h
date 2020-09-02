@@ -15,20 +15,20 @@ class AActor;
 #endif
 #define PENTIUMDUAL_PentiumDualCharacter_generated_h
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_SPARSE_DATA
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_RPC_WRAPPERS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_SPARSE_DATA
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execon_attack_overlap_end); \
 	DECLARE_FUNCTION(execon_attack_overlap_begin);
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execon_attack_overlap_end); \
 	DECLARE_FUNCTION(execon_attack_overlap_begin);
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_INCLASS_NO_PURE_DECLS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPentiumDualCharacter(); \
 	friend struct Z_Construct_UClass_APentiumDualCharacter_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(APentiumDualCharacter)
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_INCLASS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesAPentiumDualCharacter(); \
 	friend struct Z_Construct_UClass_APentiumDualCharacter_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(APentiumDualCharacter)
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_STANDARD_CONSTRUCTORS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APentiumDualCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APentiumDualCharacter) \
@@ -59,7 +59,7 @@ private: \
 public:
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_ENHANCED_CONSTRUCTORS \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APentiumDualCharacter(APentiumDualCharacter&&); \
@@ -70,35 +70,37 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APentiumDualCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APentiumDualCharacter)
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_PRIVATE_PROPERTY_OFFSET \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(APentiumDualCharacter, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(APentiumDualCharacter, FollowCamera); } \
 	FORCEINLINE static uint32 __PPO__distraction_sound() { return STRUCT_OFFSET(APentiumDualCharacter, distraction_sound); } \
 	FORCEINLINE static uint32 __PPO__montage() { return STRUCT_OFFSET(APentiumDualCharacter, montage); } \
-	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); }
+	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); } \
+	FORCEINLINE static uint32 __PPO__left_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, left_fist_collision_box); } \
+	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, right_fist_collision_box); }
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_14_PROLOG
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_GENERATED_BODY_LEGACY \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_15_PROLOG
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_PRIVATE_PROPERTY_OFFSET \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_SPARSE_DATA \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_RPC_WRAPPERS \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_INCLASS \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_STANDARD_CONSTRUCTORS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_PRIVATE_PROPERTY_OFFSET \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_SPARSE_DATA \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_RPC_WRAPPERS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_INCLASS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_GENERATED_BODY \
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_PRIVATE_PROPERTY_OFFSET \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_SPARSE_DATA \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_INCLASS_NO_PURE_DECLS \
-	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_17_ENHANCED_CONSTRUCTORS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_PRIVATE_PROPERTY_OFFSET \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_SPARSE_DATA \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_INCLASS_NO_PURE_DECLS \
+	PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

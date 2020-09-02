@@ -58,10 +58,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterBase)
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(ACharacterBase, right_fist_collision_box); }
-
-
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_PRIVATE_PROPERTY_OFFSET
 #define PentiumDual_Source_PentiumDual_CharacterBase_h_9_PROLOG
 #define PentiumDual_Source_PentiumDual_CharacterBase_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

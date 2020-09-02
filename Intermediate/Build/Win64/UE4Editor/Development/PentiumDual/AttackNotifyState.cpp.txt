@@ -3,9 +3,18 @@ C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\AttackNo
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Animation/AnimNotifies/AnimNotifyState.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AnimNotifyState.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\AttackNotifyState.generated.h
-C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\CharacterBase.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\PentiumDualCharacter.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\CharacterBase.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\CharacterBase.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Components/BoxComponent.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\BoxComponent.generated.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PentiumDualCharacter.generated.h

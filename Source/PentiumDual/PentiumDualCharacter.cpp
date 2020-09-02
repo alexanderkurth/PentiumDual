@@ -78,6 +78,14 @@ APentiumDualCharacter::APentiumDualCharacter() :
 	{
 		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
 	}
+
+	left_fist_collision_box = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftFistCollisionBox"));
+	left_fist_collision_box->SetupAttachment(RootComponent);
+	left_fist_collision_box->SetCollisionProfileName("NoCollision");
+
+	right_fist_collision_box = CreateDefaultSubobject<UBoxComponent>(TEXT("RightFistCollisionBox"));
+	right_fist_collision_box->SetupAttachment(RootComponent);
+	right_fist_collision_box->SetCollisionProfileName("NoCollision");
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -113,7 +121,7 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Distract", IE_Pressed, this, &APentiumDualCharacter::on_distract);
 
 	//attack functionality
-	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APentiumDualCharacter::AttackStart);
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &APentiumDualCharacter::AttackInput);
 	PlayerInputComponent->BindAction("Attack", IE_Released, this, &APentiumDualCharacter::AttackEnd);
 }
 
@@ -121,18 +129,29 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 void APentiumDualCharacter::AttackStart()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Attack Start"));
-	// generate a rendom number between 1 and 2
-	int montageSectionIndex = rand() % 3 + 1;
+	left_fist_collision_box->SetCollisionProfileName("Weapon");
+	right_fist_collision_box->SetCollisionProfileName("Weapon");
 
-	//Create a new string reference
-	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
-	PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
 }
 
 void APentiumDualCharacter::AttackEnd()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Attack End"));
 
+	left_fist_collision_box->SetCollisionProfileName("NoCollision");
+	right_fist_collision_box->SetCollisionProfileName("NoCollision");
+}
+
+void APentiumDualCharacter::AttackInput()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Attack End"));
+
+	// generate a rendom number between 1 and 2
+	int montageSectionIndex = rand() % 4 + 1;
+
+	//Create a new string reference
+	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
+	PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
 }
 
 float APentiumDualCharacter::get_health() const
@@ -161,20 +180,31 @@ void APentiumDualCharacter::Tick(float const DeltaTime)
 }
 
 
+void APentiumDualCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	//attach colllision component sto socket based on transformation definitions
+	const FAttachmentTransformRules attachmentRules(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::KeepWorld, false);
+	
+	left_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_l_socket");
+	right_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_r_socket");
+}
+
 void APentiumDualCharacter::setup_stimulus()
 {
 	stimulus = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("Stimulus"));
 	stimulus->RegisterForSense(TSubclassOf < UAISense_Sight>());
 	stimulus->RegisterWithPerceptionSystem();
 }
-
+/*
 void APentiumDualCharacter::on_attack()
 {
 	if (montage)
 	{
 		PlayAnimMontage(montage);
 	}
-}
+}*/
 
 void APentiumDualCharacter::on_distract()
 {

@@ -4,26 +4,30 @@
 #include "AttackNotifyState.h"
 #include "Runtime/Engine/Classes/Engine/Engine.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "CharacterBase.h"
+#include "PentiumDualCharacter.h"
 
 void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSequenceBase* const animation, float const total_duration)
 {
-	if (mesh && mesh->GetOwner())
+	UE_LOG(LogTemp, Warning, TEXT("Notify Begin"));
+
+	if (mesh != NULL && mesh->GetOwner() != NULL)
 	{
-		if (ACharacterBase* const character = Cast<ACharacterBase>(mesh->GetOwner()))
+		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
 		{
-			character->attack_start();
+			character->AttackStart();
 		}
 	}
 }
 
 void UAttackNotifyState::NotifyEnd(USkeletalMeshComponent* const mesh, UAnimSequenceBase* const animation)
 {
-	if (mesh && mesh->GetOwner())
+	UE_LOG(LogTemp, Warning, TEXT("Notify End"));
+
+	if (mesh != NULL && mesh->GetOwner() != NULL)
 	{
-		if (ACharacterBase* const character = Cast<ACharacterBase>(mesh->GetOwner()))
+		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
 		{
-			character->attack_end();
+			character->AttackEnd();
 		}
 	}
 }

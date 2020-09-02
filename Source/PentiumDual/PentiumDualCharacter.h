@@ -7,6 +7,7 @@
 #include "Sound/SoundBase.h"
 #include "CharacterBase.h"
 #include "Engine/DataTable.h"
+#include "Components/BoxComponent.h"
 
 #include "PentiumDualCharacter.generated.h"
 
@@ -67,14 +68,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
 
-	/**
-	 * AttackStart - Triggered when the player initiate an attack
-	 */
-	void AttackStart();
-	/**
-	 * AttackEnd - Triggered when the player stops an attack
-	 */
-	void AttackEnd();
+
 
 public:
 	/** Returns CameraBoom subobject **/
@@ -89,6 +83,19 @@ public:
 
 	void Tick(float const DeltaTime) override;
 
+	virtual void BeginPlay() override;
+
+	/**
+ * AttackStart - Triggered when the player initiate an attack
+ */
+	void AttackStart();
+	/**
+	 * AttackEnd - Triggered when the player stops an attack
+	 */
+	void AttackEnd();
+
+	//Trigger attacks animation based on user Input
+	void AttackInput();
 
 private:
 
@@ -106,7 +113,12 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* melee_fist_attack_montage;
 
-	void on_attack();
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
+	class UBoxComponent* left_fist_collision_box;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
+	class UBoxComponent* right_fist_collision_box;
+
+	//void on_attack();
 	void on_distract();
 
 	UFUNCTION()
