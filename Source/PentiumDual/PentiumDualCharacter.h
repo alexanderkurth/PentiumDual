@@ -8,6 +8,7 @@
 #include "CharacterBase.h"
 #include "Engine/DataTable.h"
 #include "Components/BoxComponent.h"
+#include "Components/AudioComponent.h"
 
 #include "PentiumDualCharacter.generated.h"
 
@@ -34,6 +35,9 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
+	class USoundCue* PunchSoundCue;
 
 protected:
 
@@ -97,6 +101,9 @@ public:
 	//Trigger attacks animation based on user Input
 	void AttackInput();
 
+	UFUNCTION()
+	void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
 private:
 
 	class UAIPerceptionStimuliSourceComponent* stimulus;
@@ -117,6 +124,9 @@ private:
 	class UBoxComponent* left_fist_collision_box;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* right_fist_collision_box;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Audio", meta = (AllowPrivateAccess = "true"))
+	UAudioComponent* PunchAudioComponent;
 
 	//void on_attack();
 	void on_distract();

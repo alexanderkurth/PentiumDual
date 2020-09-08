@@ -78,7 +78,20 @@ APentiumDualCharacter::APentiumDualCharacter() :
 	{
 		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
 	}
+	UE_LOG(LogTemp, Warning, TEXT("frefefef"));
 
+	static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
+	if (USoundCueObject.Succeeded())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("USONDUCE"));
+
+		PunchSoundCue = USoundCueObject.Object;
+
+		PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
+		PunchAudioComponent->AttachTo(RootComponent);
+
+	}
+	
 	left_fist_collision_box = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftFistCollisionBox"));
 	left_fist_collision_box->SetupAttachment(RootComponent);
 	left_fist_collision_box->SetCollisionProfileName("NoCollision");
@@ -128,7 +141,7 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 void APentiumDualCharacter::AttackStart()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Attack Start"));
+	//UE_LOG(LogTemp, Warning, TEXT("Attack Start"));
 	left_fist_collision_box->SetCollisionProfileName("Weapon");
 	right_fist_collision_box->SetCollisionProfileName("Weapon");
 
@@ -136,7 +149,7 @@ void APentiumDualCharacter::AttackStart()
 
 void APentiumDualCharacter::AttackEnd()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Attack End"));
+	//UE_LOG(LogTemp, Warning, TEXT("Attack End"));
 
 	left_fist_collision_box->SetCollisionProfileName("NoCollision");
 	right_fist_collision_box->SetCollisionProfileName("NoCollision");
@@ -144,15 +157,17 @@ void APentiumDualCharacter::AttackEnd()
 
 void APentiumDualCharacter::AttackInput()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Attack End"));
+	//UE_LOG(LogTemp, Warning, TEXT("Attack End"));
 
 	// generate a rendom number between 1 and 2
-	int montageSectionIndex = rand() % 4 + 1;
+	int montageSectionIndex = rand() % 3 + 1;
 
 	//Create a new string reference
 	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
 	PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
+
 }
+
 
 float APentiumDualCharacter::get_health() const
 {
@@ -189,6 +204,18 @@ void APentiumDualCharacter::BeginPlay()
 	
 	left_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_l_socket");
 	right_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_r_socket");
+
+	left_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
+	right_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
+	UE_LOG(LogTemp, Warning, TEXT("Sound before ok"));
+
+	if (PunchSoundCue && PunchAudioComponent)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Sound all ok"));
+
+		PunchAudioComponent->SetSound(PunchSoundCue);
+	}
+
 }
 
 void APentiumDualCharacter::setup_stimulus()
@@ -288,3 +315,14 @@ void APentiumDualCharacter::MoveRight(float Value)
 }
 
 
+
+void APentiumDualCharacter::OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	UE_LOG(LogTemp, Warning, TEXT("ON ATTACJ HIT"));
+
+	if (PunchAudioComponent && !PunchAudioComponent->IsPlaying())
+	{
+		PunchAudioComponent->SetPitchMultiplier(FMath::RandRange(1.0f,1.3f));
+		PunchAudioComponent->Play(0.f);
+	}
+}
