@@ -32,10 +32,6 @@ public:
 
 	UAnimMontage* get_montage() const;
 
-	float get_health() const;
-	float get_max_health() const;
-	void set_health(float const new_health);
-
 	UBehaviorTree* GetBehaviorTree() const;
 
 	void SetPatrolPath(APatrolPath* const path);
@@ -55,8 +51,4 @@ private:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* montage;
-
-	class UWidgetComponent* widget_component;
-	float const max_health = 100.0f;
-	float health;
 };

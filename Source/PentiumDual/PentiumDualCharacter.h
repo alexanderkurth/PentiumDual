@@ -18,13 +18,6 @@ class APentiumDualCharacter : public ACharacterBase
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
-
-	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
 public:
 	APentiumDualCharacter();
 
@@ -38,6 +31,31 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
 	class USoundCue* PunchSoundCue;
+
+	/** Returns CameraBoom subobject **/
+	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	/** Returns FollowCamera subobject **/
+	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	void Tick(float const DeltaTime) override;
+
+	virtual void BeginPlay() override;
+
+	/**
+	 * AttackStart - Triggered when the player initiate an attack
+	 */
+	void AttackStart();
+	/**
+	 * AttackEnd - Triggered when the player stops an attack
+	 */
+	void AttackEnd();
+
+	//Trigger attacks animation based on user Input
+	void AttackInput();
+
+	UFUNCTION()
+	void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
 
 protected:
 
@@ -67,44 +85,21 @@ protected:
 
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
-protected:
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
 
-
-
-public:
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	/** Returns FollowCamera subobject **/
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-
-	//getters & setters
-	float get_health() const;
-	float get_max_health() const;
-	void set_health(float const new_health);
-
-	void Tick(float const DeltaTime) override;
-
-	virtual void BeginPlay() override;
-
-	/**
- * AttackStart - Triggered when the player initiate an attack
- */
-	void AttackStart();
-	/**
-	 * AttackEnd - Triggered when the player stops an attack
-	 */
-	void AttackEnd();
-
-	//Trigger attacks animation based on user Input
-	void AttackInput();
-
-	UFUNCTION()
-	void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
 private:
+
+
+	/** Camera boom positioning the camera behind the character */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class USpringArmComponent* CameraBoom;
+
+	/** Follow camera */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* FollowCamera;
 
 	class UAIPerceptionStimuliSourceComponent* stimulus;
 
@@ -112,9 +107,6 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound", meta = (AllowPrivateAccess = "true"))
 	USoundBase* distraction_sound;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation", meta = (AllowPrivateAccess = "true"))
-	UAnimMontage* montage;
 
 	//melee fist montage
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
@@ -128,25 +120,6 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Audio", meta = (AllowPrivateAccess = "true"))
 	UAudioComponent* PunchAudioComponent;
 
-	//void on_attack();
 	void on_distract();
-
-	UFUNCTION()
-		void on_attack_overlap_begin(
-			UPrimitiveComponent* const overlapped_component,
-			AActor* const other_actor,
-			UPrimitiveComponent* other_component,
-			int const other_body_index);
-
-	UFUNCTION()
-		void on_attack_overlap_end(
-			UPrimitiveComponent* const overlapped_component,
-			AActor* const other_actor,
-			UPrimitiveComponent* other_component,
-			int const other_body_index);
-
-	class UWidgetComponent* widget_component;
-	float const max_health = 100.0f;
-	float health;
 };
 

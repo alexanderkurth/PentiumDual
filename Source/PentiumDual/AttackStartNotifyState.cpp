@@ -12,7 +12,7 @@ void UAttackStartNotifyState::NotifyBegin(USkeletalMeshComponent* MeshComp, UAni
 		APentiumDualCharacter* Player = Cast<APentiumDualCharacter>(MeshComp->GetOwner());
 		if (Player)
 		{
-			Player->attack_start();
+			Player->AttackEnd();
 		}
 	}
 }
@@ -24,7 +24,7 @@ void UAttackStartNotifyState::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimS
 		APentiumDualCharacter* Player = Cast<APentiumDualCharacter>(MeshComp->GetOwner());
 		if (Player)
 		{
-			Player->attack_end();
+			Player->AttackStart();
 		}
 	}
 }

@@ -15,18 +15,20 @@ public:
 	// Sets default values for this actor's properties
 	ACharacterBase();
 
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	float get_health() const;
+	float get_max_health() const;
+	void set_health(float const new_health);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	float const max_health = 100.0f;
+	float health;
 
-	virtual void attack_start();
-	virtual void attack_end();
-
-protected:
-
+	class UWidgetComponent* widget_component;
 
 };

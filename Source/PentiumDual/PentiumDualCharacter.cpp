@@ -16,15 +16,12 @@
 #include "Runtime/Engine/Classes/Engine/Engine.h"
 #include "Components/WidgetComponent.h"
 #include "UObject/ConstructorHelpers.h"
-#include "HealthBar.h"
 #include "Engine.h"
 
 //////////////////////////////////////////////////////////////////////////
 // APentiumDualCharacter
 
-APentiumDualCharacter::APentiumDualCharacter() : 
-												health(max_health),
-												widget_component(CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthValue")))
+APentiumDualCharacter::APentiumDualCharacter() 
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -60,31 +57,15 @@ APentiumDualCharacter::APentiumDualCharacter() :
 
 	setup_stimulus();
 
-	if (widget_component)
-	{
-		widget_component->SetupAttachment(RootComponent);
-		widget_component->SetWidgetSpace(EWidgetSpace::Screen);
-		widget_component->SetRelativeLocation(FVector(0.0f, 0.0f, 85.0f));
-		static ConstructorHelpers::FClassFinder<UUserWidget> widget_class(TEXT("/Game/UI/BP_HealthBar"));
-	
-		if (widget_class.Succeeded())
-		{
-			widget_component->SetWidgetClass(widget_class.Class);
-		}
-	}
-
 	static ConstructorHelpers::FObjectFinder<UAnimMontage> MeleeFistAttackMontageObecjt(TEXT("AnimMontage'/Game/Animations/MeleeFistAttackMontage.MeleeFistAttackMontage'"));
 	if (MeleeFistAttackMontageObecjt.Succeeded())
 	{
 		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("frefefef"));
 
 	static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
 	if (USoundCueObject.Succeeded())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("USONDUCE"));
-
 		PunchSoundCue = USoundCueObject.Object;
 
 		PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
@@ -141,57 +122,32 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 void APentiumDualCharacter::AttackStart()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Attack Start"));
 	left_fist_collision_box->SetCollisionProfileName("Weapon");
 	right_fist_collision_box->SetCollisionProfileName("Weapon");
-
 }
 
 void APentiumDualCharacter::AttackEnd()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Attack End"));
-
 	left_fist_collision_box->SetCollisionProfileName("NoCollision");
 	right_fist_collision_box->SetCollisionProfileName("NoCollision");
 }
 
 void APentiumDualCharacter::AttackInput()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Attack End"));
-
 	// generate a rendom number between 1 and 2
 	int montageSectionIndex = rand() % 3 + 1;
 
 	//Create a new string reference
 	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
-	PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
-
+	
+	//if(!GetCurrentMontage())
+		PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
 }
 
-
-float APentiumDualCharacter::get_health() const
-{
-	return health;
-}
-
-float APentiumDualCharacter::get_max_health() const
-{
-	return max_health;
-}
-
-void APentiumDualCharacter::set_health(float const new_health)
-{
-	health = new_health;
-}
 
 void APentiumDualCharacter::Tick(float const DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	auto const uw = Cast<UHealthBar>(widget_component->GetUserWidgetObject());
-	if (uw)
-	{
-		uw->set_bar_value_percent(health / max_health);
-	}
 }
 
 
@@ -207,12 +163,9 @@ void APentiumDualCharacter::BeginPlay()
 
 	left_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
 	right_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
-	UE_LOG(LogTemp, Warning, TEXT("Sound before ok"));
 
 	if (PunchSoundCue && PunchAudioComponent)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Sound all ok"));
-
 		PunchAudioComponent->SetSound(PunchSoundCue);
 	}
 
@@ -224,39 +177,16 @@ void APentiumDualCharacter::setup_stimulus()
 	stimulus->RegisterForSense(TSubclassOf < UAISense_Sight>());
 	stimulus->RegisterWithPerceptionSystem();
 }
-/*
-void APentiumDualCharacter::on_attack()
-{
-	if (montage)
-	{
-		PlayAnimMontage(montage);
-	}
-}*/
 
 void APentiumDualCharacter::on_distract()
 {
-	UE_LOG(LogTemp, Warning, TEXT("On distract character"));
-
 	if (distraction_sound)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Distracted soiund"));
-
 		FVector const loc = GetActorLocation();
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), distraction_sound, loc);
 		UAISense_Hearing::ReportNoiseEvent(GetWorld(), loc, 1.0f, this, 0.0f, tags::noise_tag);
 	}
 }
-
-void APentiumDualCharacter::on_attack_overlap_begin(UPrimitiveComponent* const overlapped_component, AActor* const other_actor, UPrimitiveComponent* other_component, int const other_body_index)
-{
-
-}
-
-void APentiumDualCharacter::on_attack_overlap_end(UPrimitiveComponent* const overlapped_component, AActor* const other_actor, UPrimitiveComponent* other_component, int const other_body_index)
-{
-
-}
-
 
 void APentiumDualCharacter::OnResetVR()
 {
@@ -315,10 +245,8 @@ void APentiumDualCharacter::MoveRight(float Value)
 }
 
 
-
 void APentiumDualCharacter::OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	UE_LOG(LogTemp, Warning, TEXT("ON ATTACJ HIT"));
 
 	if (PunchAudioComponent && !PunchAudioComponent->IsPlaying())
 	{

@@ -20,15 +20,11 @@ struct FHitResult;
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_SPARSE_DATA
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execon_attack_overlap_end); \
-	DECLARE_FUNCTION(execon_attack_overlap_begin); \
 	DECLARE_FUNCTION(execOnAttackHit);
 
 
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execon_attack_overlap_end); \
-	DECLARE_FUNCTION(execon_attack_overlap_begin); \
 	DECLARE_FUNCTION(execOnAttackHit);
 
 
@@ -78,7 +74,6 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APentiumDualCharacter); \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(APentiumDualCharacter, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(APentiumDualCharacter, FollowCamera); } \
 	FORCEINLINE static uint32 __PPO__distraction_sound() { return STRUCT_OFFSET(APentiumDualCharacter, distraction_sound); } \
-	FORCEINLINE static uint32 __PPO__montage() { return STRUCT_OFFSET(APentiumDualCharacter, montage); } \
 	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); } \
 	FORCEINLINE static uint32 __PPO__left_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, left_fist_collision_box); } \
 	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, right_fist_collision_box); } \
