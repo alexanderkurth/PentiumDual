@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/BoxComponent.h"
+
 #include "CharacterBase.generated.h"
 
 UCLASS()
@@ -30,5 +32,16 @@ protected:
 	float health;
 
 	class UWidgetComponent* widget_component;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
+	class UBoxComponent* left_fist_collision_box;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
+	class UBoxComponent* right_fist_collision_box;
+
+	UFUNCTION()
+		void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Audio", meta = (AllowPrivateAccess = "true"))
+		UAudioComponent* PunchAudioComponent;
 
 };

@@ -8,15 +8,27 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FVector;
+struct FHitResult;
 #ifdef PENTIUMDUAL_CharacterBase_generated_h
 #error "CharacterBase.generated.h already included, missing '#pragma once' in CharacterBase.h"
 #endif
 #define PENTIUMDUAL_CharacterBase_generated_h
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_SPARSE_DATA
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_RPC_WRAPPERS
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_INCLASS_NO_PURE_DECLS \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_SPARSE_DATA
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnAttackHit);
+
+
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnAttackHit);
+
+
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
@@ -25,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_INCLASS \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
@@ -34,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterBase)
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_STANDARD_CONSTRUCTORS \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterBase) \
@@ -47,7 +59,7 @@ private: \
 public:
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_ENHANCED_CONSTRUCTORS \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterBase(ACharacterBase&&); \
@@ -58,28 +70,33 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterBase)
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_PRIVATE_PROPERTY_OFFSET
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_9_PROLOG
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_GENERATED_BODY_LEGACY \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__left_fist_collision_box() { return STRUCT_OFFSET(ACharacterBase, left_fist_collision_box); } \
+	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(ACharacterBase, right_fist_collision_box); } \
+	FORCEINLINE static uint32 __PPO__PunchAudioComponent() { return STRUCT_OFFSET(ACharacterBase, PunchAudioComponent); }
+
+
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_11_PROLOG
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_PRIVATE_PROPERTY_OFFSET \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_SPARSE_DATA \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_RPC_WRAPPERS \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_INCLASS \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_STANDARD_CONSTRUCTORS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_SPARSE_DATA \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_RPC_WRAPPERS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_INCLASS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define PentiumDual_Source_PentiumDual_CharacterBase_h_12_GENERATED_BODY \
+#define PentiumDual_Source_PentiumDual_CharacterBase_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_PRIVATE_PROPERTY_OFFSET \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_SPARSE_DATA \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_INCLASS_NO_PURE_DECLS \
-	PentiumDual_Source_PentiumDual_CharacterBase_h_12_ENHANCED_CONSTRUCTORS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_SPARSE_DATA \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_INCLASS_NO_PURE_DECLS \
+	PentiumDual_Source_PentiumDual_CharacterBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

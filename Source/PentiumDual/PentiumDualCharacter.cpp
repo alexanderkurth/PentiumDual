@@ -73,13 +73,7 @@ APentiumDualCharacter::APentiumDualCharacter()
 
 	}
 	
-	left_fist_collision_box = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftFistCollisionBox"));
-	left_fist_collision_box->SetupAttachment(RootComponent);
-	left_fist_collision_box->SetCollisionProfileName("NoCollision");
 
-	right_fist_collision_box = CreateDefaultSubobject<UBoxComponent>(TEXT("RightFistCollisionBox"));
-	right_fist_collision_box->SetupAttachment(RootComponent);
-	right_fist_collision_box->SetCollisionProfileName("NoCollision");
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -155,14 +149,8 @@ void APentiumDualCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//attach colllision component sto socket based on transformation definitions
-	const FAttachmentTransformRules attachmentRules(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::KeepWorld, false);
 	
-	left_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_l_socket");
-	right_fist_collision_box->AttachToComponent(GetMesh(), attachmentRules, "hand_r_socket");
 
-	left_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
-	right_fist_collision_box->OnComponentHit.AddDynamic(this, &APentiumDualCharacter::OnAttackHit);
 
 	if (PunchSoundCue && PunchAudioComponent)
 	{
@@ -245,12 +233,3 @@ void APentiumDualCharacter::MoveRight(float Value)
 }
 
 
-void APentiumDualCharacter::OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-
-	if (PunchAudioComponent && !PunchAudioComponent->IsPlaying())
-	{
-		PunchAudioComponent->SetPitchMultiplier(FMath::RandRange(1.0f,1.3f));
-		PunchAudioComponent->Play(0.f);
-	}
-}

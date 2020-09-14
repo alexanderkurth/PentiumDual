@@ -53,8 +53,6 @@ public:
 	//Trigger attacks animation based on user Input
 	void AttackInput();
 
-	UFUNCTION()
-	void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 
 protected:
@@ -111,14 +109,12 @@ private:
 	//melee fist montage
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* melee_fist_attack_montage;
-
+	/*
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* left_fist_collision_box;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
-	class UBoxComponent* right_fist_collision_box;
+	class UBoxComponent* right_fist_collision_box;*/
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Audio", meta = (AllowPrivateAccess = "true"))
-	UAudioComponent* PunchAudioComponent;
 
 	void on_distract();
 };

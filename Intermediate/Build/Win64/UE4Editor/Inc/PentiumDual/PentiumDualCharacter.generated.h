@@ -8,26 +8,14 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UPrimitiveComponent;
-class AActor;
-struct FVector;
-struct FHitResult;
 #ifdef PENTIUMDUAL_PentiumDualCharacter_generated_h
 #error "PentiumDualCharacter.generated.h already included, missing '#pragma once' in PentiumDualCharacter.h"
 #endif
 #define PENTIUMDUAL_PentiumDualCharacter_generated_h
 
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_SPARSE_DATA
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execOnAttackHit);
-
-
-#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execOnAttackHit);
-
-
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS
+#define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPentiumDualCharacter(); \
@@ -74,10 +62,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APentiumDualCharacter); \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(APentiumDualCharacter, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(APentiumDualCharacter, FollowCamera); } \
 	FORCEINLINE static uint32 __PPO__distraction_sound() { return STRUCT_OFFSET(APentiumDualCharacter, distraction_sound); } \
-	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); } \
-	FORCEINLINE static uint32 __PPO__left_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, left_fist_collision_box); } \
-	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(APentiumDualCharacter, right_fist_collision_box); } \
-	FORCEINLINE static uint32 __PPO__PunchAudioComponent() { return STRUCT_OFFSET(APentiumDualCharacter, PunchAudioComponent); }
+	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); }
 
 
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_16_PROLOG

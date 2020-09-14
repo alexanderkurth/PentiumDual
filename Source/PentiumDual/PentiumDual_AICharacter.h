@@ -42,7 +42,6 @@ protected:
 
 private:
 
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="AI", meta = (AllowPrivateAccess = "true"))
 	APatrolPath* patrol_path;
 
