@@ -54,6 +54,8 @@ C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\AIModule\Classes\Behav
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\AIModule\Classes\BehaviorTree/BTCompositeNode.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule\BTCompositeNode.generated.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule\BehaviorTree.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PentiumDual_AICharacter.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\ChasePlayer.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\PentiumDual_AIController.h

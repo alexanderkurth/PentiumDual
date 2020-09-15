@@ -10,8 +10,6 @@
 
 void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSequenceBase* const animation, float const total_duration)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Notify Begin"));
-
 	if (mesh != NULL && mesh->GetOwner() != NULL)
 	{
 		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
@@ -22,6 +20,7 @@ void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSe
 		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(mesh->GetOwner());
 		if (NPC)
 		{
+
 			NPC->AttackStart();
 		}
 	}
@@ -29,18 +28,18 @@ void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSe
 
 void UAttackNotifyState::NotifyEnd(USkeletalMeshComponent* const mesh, UAnimSequenceBase* const animation)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Notify End"));
-
 	if (mesh != NULL && mesh->GetOwner() != NULL)
 	{
 		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
 		{
+
 			character->AttackEnd();
 		}
 
 		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(mesh->GetOwner());
 		if (NPC)
 		{
+
 			NPC->AttackEnd();
 		}
 	}

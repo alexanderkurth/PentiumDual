@@ -54,7 +54,6 @@ public:
 	void AttackInput();
 
 
-
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -109,11 +108,6 @@ private:
 	//melee fist montage
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* melee_fist_attack_montage;
-	/*
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
-	class UBoxComponent* left_fist_collision_box;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = "true"))
-	class UBoxComponent* right_fist_collision_box;*/
 
 
 	void on_distract();

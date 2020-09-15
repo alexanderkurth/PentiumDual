@@ -83,6 +83,8 @@ C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Compone
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\BoxComponent.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\CharacterBase.generated.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PentiumDual_AICharacter.generated.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\AIModule\Classes\Perception/AISenseConfig_Sight.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\AIModule\Classes\Perception/AISense.h
@@ -120,7 +122,5 @@ C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\PentiumD
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\PentiumDualCharacter.generated.h
 C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual\ai_tags.h

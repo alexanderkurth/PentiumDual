@@ -8,6 +8,9 @@
 #include "Animation/AnimMontage.h"
 #include "CharacterBase.h"
 #include "BehaviorTree/BehaviorTree.h"
+#include "Components/AudioComponent.h"
+#include "Components/BoxComponent.h"
+
 
 #include "PentiumDual_AICharacter.generated.h"
 
@@ -45,6 +48,10 @@ public:
 	 */
 	void AttackEnd();
 
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
+		class USoundCue* PunchSoundCue;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -59,4 +66,6 @@ private:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* montage;
+
+
 };

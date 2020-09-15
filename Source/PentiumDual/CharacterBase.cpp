@@ -9,6 +9,8 @@
 #include "Components/AudioComponent.h"
 
 #include "Runtime/Engine/Classes/Engine/Engine.h"
+#include "PentiumDual_AICharacter.h"
+#include "PentiumDualCharacter.h"
 
 
 ACharacterBase::ACharacterBase() :
@@ -84,7 +86,6 @@ void ACharacterBase::set_health(float const new_health)
 
 void ACharacterBase::OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-
 	if (PunchAudioComponent && !PunchAudioComponent->IsPlaying())
 	{
 		PunchAudioComponent->SetPitchMultiplier(FMath::RandRange(1.0f, 1.3f));
