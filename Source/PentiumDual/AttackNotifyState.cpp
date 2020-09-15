@@ -5,6 +5,8 @@
 #include "Runtime/Engine/Classes/Engine/Engine.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "PentiumDualCharacter.h"
+#include "PentiumDual_AICharacter.h"
+
 
 void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSequenceBase* const animation, float const total_duration)
 {
@@ -15,6 +17,12 @@ void UAttackNotifyState::NotifyBegin(USkeletalMeshComponent* const mesh, UAnimSe
 		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
 		{
 			character->AttackStart();
+		}
+
+		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(mesh->GetOwner());
+		if (NPC)
+		{
+			NPC->AttackStart();
 		}
 	}
 }
@@ -28,6 +36,12 @@ void UAttackNotifyState::NotifyEnd(USkeletalMeshComponent* const mesh, UAnimSequ
 		if (APentiumDualCharacter* const character = Cast<APentiumDualCharacter>(mesh->GetOwner()))
 		{
 			character->AttackEnd();
+		}
+
+		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(mesh->GetOwner());
+		if (NPC)
+		{
+			NPC->AttackEnd();
 		}
 	}
 }

@@ -36,6 +36,15 @@ public:
 
 	void SetPatrolPath(APatrolPath* const path);
 
+	/**
+	 * AttackStart - Triggered when the player initiate an attack
+	 */
+	void AttackStart();
+	/**
+	 * AttackEnd - Triggered when the player stops an attack
+	 */
+	void AttackEnd();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

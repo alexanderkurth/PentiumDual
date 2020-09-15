@@ -3,6 +3,7 @@
 
 #include "AttackStartNotifyState.h"
 #include "PentiumDualCharacter.h"
+#include "PentiumDual_AICharacter.h"
 
 
 void UAttackStartNotifyState::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration)
@@ -13,6 +14,12 @@ void UAttackStartNotifyState::NotifyBegin(USkeletalMeshComponent* MeshComp, UAni
 		if (Player)
 		{
 			Player->AttackEnd();
+		}
+
+		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(MeshComp->GetOwner());
+		if (NPC)
+		{
+			NPC->AttackEnd();
 		}
 	}
 }
@@ -25,6 +32,12 @@ void UAttackStartNotifyState::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimS
 		if (Player)
 		{
 			Player->AttackStart();
+		}
+
+		APentiumDual_AICharacter* NPC = Cast<APentiumDual_AICharacter>(MeshComp->GetOwner());
+		if (NPC)
+		{
+			NPC->AttackStart();
 		}
 	}
 }

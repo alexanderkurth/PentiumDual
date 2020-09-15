@@ -62,7 +62,25 @@ void APentiumDual_AICharacter::melee_attack()
 {
 	if (montage)
 	{
-		PlayAnimMontage(montage);
+			// generate a rendom number between 1 and 2
+	int montageSectionIndex = rand() % 3 + 1;
+
+	//Create a new string reference
+	FString montageSection = "start_" + FString::FromInt(montageSectionIndex);
+	
+	//if(!GetCurrentMontage())
+		PlayAnimMontage(montage, 1.0f, FName(montageSection));
 	}
 }
 
+void APentiumDual_AICharacter::AttackStart()
+{
+	left_fist_collision_box->SetCollisionProfileName("Weapon");
+	right_fist_collision_box->SetCollisionProfileName("Weapon");
+}
+
+void APentiumDual_AICharacter::AttackEnd()
+{
+	left_fist_collision_box->SetCollisionProfileName("NoCollision");
+	right_fist_collision_box->SetCollisionProfileName("NoCollision");
+}
