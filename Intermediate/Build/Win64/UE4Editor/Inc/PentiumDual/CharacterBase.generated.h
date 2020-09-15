@@ -73,7 +73,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACharacterBase); \
 #define PentiumDual_Source_PentiumDual_CharacterBase_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__left_fist_collision_box() { return STRUCT_OFFSET(ACharacterBase, left_fist_collision_box); } \
 	FORCEINLINE static uint32 __PPO__right_fist_collision_box() { return STRUCT_OFFSET(ACharacterBase, right_fist_collision_box); } \
-	FORCEINLINE static uint32 __PPO__PunchAudioComponent() { return STRUCT_OFFSET(ACharacterBase, PunchAudioComponent); }
+	FORCEINLINE static uint32 __PPO__PunchAudioComponent() { return STRUCT_OFFSET(ACharacterBase, PunchAudioComponent); } \
+	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(ACharacterBase, melee_fist_attack_montage); }
 
 
 #define PentiumDual_Source_PentiumDual_CharacterBase_h_11_PROLOG

@@ -31,23 +31,23 @@ public:
 
 	APatrolPath* get_patrol_path();
 
-	void melee_attack();
+	//void melee_attack();
 
 	UAnimMontage* get_montage() const;
 
 	UBehaviorTree* GetBehaviorTree() const;
 
 	void SetPatrolPath(APatrolPath* const path);
-
+	
 	/**
 	 * AttackStart - Triggered when the player initiate an attack
 	 */
-	void AttackStart();
+	//void AttackStart();
 	/**
 	 * AttackEnd - Triggered when the player stops an attack
 	 */
-	void AttackEnd();
-
+	//void AttackEnd();
+	
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
 		class USoundCue* PunchSoundCue;
@@ -63,9 +63,9 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
 	UBehaviorTree* behaviorTree;
-	
+	/*
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation", meta = (AllowPrivateAccess = "true"))
-	UAnimMontage* montage;
+	UAnimMontage* montage;*/
 
 
 };

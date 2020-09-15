@@ -17,7 +17,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDualCharacter() {}
 	PENTIUMDUAL_API UClass* Z_Construct_UClass_APentiumDualCharacter();
 	PENTIUMDUAL_API UClass* Z_Construct_UClass_ACharacterBase();
 	UPackage* Z_Construct_UPackage__Script_PentiumDual();
-	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
@@ -36,10 +35,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDualCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_melee_fist_attack_montage_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_melee_fist_attack_montage;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_distraction_sound_MetaData[];
 #endif
@@ -79,16 +74,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDualCharacter() {}
 		{ "ModuleRelativePath", "PentiumDualCharacter.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_melee_fist_attack_montage_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Animation" },
-		{ "Comment", "//melee fist montage\n" },
-		{ "ModuleRelativePath", "PentiumDualCharacter.h" },
-		{ "ToolTip", "melee fist montage" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_melee_fist_attack_montage = { "melee_fist_attack_montage", nullptr, (EPropertyFlags)0x0040000000010015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_melee_fist_attack_montage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_melee_fist_attack_montage_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_distraction_sound_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -146,7 +131,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDualCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APentiumDualCharacter, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_BaseTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_BaseTurnRate_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APentiumDualCharacter_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_melee_fist_attack_montage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_distraction_sound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_FollowCamera,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDualCharacter_Statics::NewProp_CameraBoom,
@@ -181,7 +165,7 @@ void EmptyLinkFunctionForGeneratedCodePentiumDualCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APentiumDualCharacter, 254568848);
+	IMPLEMENT_CLASS(APentiumDualCharacter, 207937133);
 	template<> PENTIUMDUAL_API UClass* StaticClass<APentiumDualCharacter>()
 	{
 		return APentiumDualCharacter::StaticClass();

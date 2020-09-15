@@ -17,7 +17,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 	PENTIUMDUAL_API UClass* Z_Construct_UClass_APentiumDual_AICharacter();
 	PENTIUMDUAL_API UClass* Z_Construct_UClass_ACharacterBase();
 	UPackage* Z_Construct_UPackage__Script_PentiumDual();
-	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	PENTIUMDUAL_API UClass* Z_Construct_UClass_APatrolPath_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
@@ -35,10 +34,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_montage_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_montage;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_behaviorTree_MetaData[];
 #endif
@@ -67,14 +62,6 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_montage_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Animation" },
-		{ "ModuleRelativePath", "PentiumDual_AICharacter.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_montage = { "montage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APentiumDual_AICharacter, montage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_montage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_montage_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_behaviorTree_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "AI" },
@@ -94,12 +81,13 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_PunchSoundCue_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Sound" },
+		{ "Comment", "//void AttackEnd();\n" },
 		{ "ModuleRelativePath", "PentiumDual_AICharacter.h" },
+		{ "ToolTip", "void AttackEnd();" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_PunchSoundCue = { "PunchSoundCue", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APentiumDual_AICharacter, PunchSoundCue), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_PunchSoundCue_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_PunchSoundCue_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APentiumDual_AICharacter_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_montage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_behaviorTree,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_patrol_path,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APentiumDual_AICharacter_Statics::NewProp_PunchSoundCue,
@@ -131,7 +119,7 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APentiumDual_AICharacter, 3518602976);
+	IMPLEMENT_CLASS(APentiumDual_AICharacter, 3524150136);
 	template<> PENTIUMDUAL_API UClass* StaticClass<APentiumDual_AICharacter>()
 	{
 		return APentiumDual_AICharacter::StaticClass();

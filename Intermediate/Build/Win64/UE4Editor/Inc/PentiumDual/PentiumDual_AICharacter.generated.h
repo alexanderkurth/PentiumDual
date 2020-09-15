@@ -60,8 +60,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APentiumDual_AICharacter); \
 
 #define PentiumDual_Source_PentiumDual_PentiumDual_AICharacter_h_20_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__patrol_path() { return STRUCT_OFFSET(APentiumDual_AICharacter, patrol_path); } \
-	FORCEINLINE static uint32 __PPO__behaviorTree() { return STRUCT_OFFSET(APentiumDual_AICharacter, behaviorTree); } \
-	FORCEINLINE static uint32 __PPO__montage() { return STRUCT_OFFSET(APentiumDual_AICharacter, montage); }
+	FORCEINLINE static uint32 __PPO__behaviorTree() { return STRUCT_OFFSET(APentiumDual_AICharacter, behaviorTree); }
 
 
 #define PentiumDual_Source_PentiumDual_PentiumDual_AICharacter_h_17_PROLOG

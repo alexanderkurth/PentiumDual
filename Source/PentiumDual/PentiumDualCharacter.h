@@ -44,14 +44,14 @@ public:
 	/**
 	 * AttackStart - Triggered when the player initiate an attack
 	 */
-	void AttackStart();
+	//void AttackStart();
 	/**
 	 * AttackEnd - Triggered when the player stops an attack
 	 */
-	void AttackEnd();
+	//void AttackEnd();
 
 	//Trigger attacks animation based on user Input
-	void AttackInput();
+	//void AttackInput();
 
 
 protected:
@@ -106,8 +106,8 @@ private:
 	USoundBase* distraction_sound;
 
 	//melee fist montage
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
-	UAnimMontage* melee_fist_attack_montage;
+	//UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
+	//UAnimMontage* melee_fist_attack_montage;
 
 
 	void on_distract();

@@ -63,7 +63,7 @@ APatrolPath* APentiumDual_AICharacter::get_patrol_path()
 
 UAnimMontage* APentiumDual_AICharacter::get_montage() const
 {
-	return montage;
+	return melee_fist_attack_montage;
 }
 
 UBehaviorTree* APentiumDual_AICharacter::GetBehaviorTree() const
@@ -75,7 +75,7 @@ void APentiumDual_AICharacter::SetPatrolPath(APatrolPath* const path)
 {
 	patrol_path = path;
 }
-
+/*
 void APentiumDual_AICharacter::melee_attack()
 {
 	if (montage)
@@ -102,5 +102,5 @@ void APentiumDual_AICharacter::AttackEnd()
 	left_fist_collision_box->SetCollisionProfileName("NoCollision");
 	right_fist_collision_box->SetCollisionProfileName("NoCollision");
 }
-
+*/
 

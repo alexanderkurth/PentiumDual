@@ -24,6 +24,12 @@ public:
 	float get_max_health() const;
 	void set_health(float const new_health);
 
+
+	void AttackStart();
+	void AttackEnd();
+
+	void AttackInput();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,9 +45,13 @@ protected:
 	class UBoxComponent* right_fist_collision_box;
 
 	UFUNCTION()
-		void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+	void OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Audio", meta = (AllowPrivateAccess = "true"))
-		UAudioComponent* PunchAudioComponent;
+	UAudioComponent* PunchAudioComponent;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation", meta = (AllowPrivateAccess = "true"))
+	UAnimMontage* melee_fist_attack_montage;
+
 
 };

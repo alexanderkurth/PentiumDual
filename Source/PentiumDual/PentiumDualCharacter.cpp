@@ -23,8 +23,7 @@
 
 APentiumDualCharacter::APentiumDualCharacter() 
 {
-	// Set size for collision capsule
-	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+
 
 	// set our turn rates for input
 	BaseTurnRate = 45.f;
@@ -56,12 +55,12 @@ APentiumDualCharacter::APentiumDualCharacter()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 
 	setup_stimulus();
-
+	/*
 	static ConstructorHelpers::FObjectFinder<UAnimMontage> MeleeFistAttackMontageObecjt(TEXT("AnimMontage'/Game/Animations/MeleeFistAttackMontage.MeleeFistAttackMontage'"));
 	if (MeleeFistAttackMontageObecjt.Succeeded())
 	{
 		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
-	}
+	}*/
 
 	static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
 	if (USoundCueObject.Succeeded())
@@ -113,7 +112,7 @@ void APentiumDualCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Attack", IE_Released, this, &APentiumDualCharacter::AttackEnd);
 }
 
-
+/*
 void APentiumDualCharacter::AttackStart()
 {
 	left_fist_collision_box->SetCollisionProfileName("Weapon");
@@ -137,7 +136,7 @@ void APentiumDualCharacter::AttackInput()
 	//if(!GetCurrentMontage())
 		PlayAnimMontage(melee_fist_attack_montage, 1.0f, FName(montageSection));
 }
-
+*/
 
 void APentiumDualCharacter::Tick(float const DeltaTime)
 {

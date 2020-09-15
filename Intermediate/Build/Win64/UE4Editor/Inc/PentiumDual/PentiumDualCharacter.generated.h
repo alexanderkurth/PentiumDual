@@ -61,8 +61,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APentiumDualCharacter); \
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_19_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(APentiumDualCharacter, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(APentiumDualCharacter, FollowCamera); } \
-	FORCEINLINE static uint32 __PPO__distraction_sound() { return STRUCT_OFFSET(APentiumDualCharacter, distraction_sound); } \
-	FORCEINLINE static uint32 __PPO__melee_fist_attack_montage() { return STRUCT_OFFSET(APentiumDualCharacter, melee_fist_attack_montage); }
+	FORCEINLINE static uint32 __PPO__distraction_sound() { return STRUCT_OFFSET(APentiumDualCharacter, distraction_sound); }
 
 
 #define PentiumDual_Source_PentiumDual_PentiumDualCharacter_h_16_PROLOG
