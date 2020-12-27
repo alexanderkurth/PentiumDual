@@ -20,15 +20,15 @@ APentiumDual_AICharacter::APentiumDual_AICharacter()
 	//GetCharacterMovement()->bUseControllerDesiredRotation = true;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
-	static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
-	if (USoundCueObject.Succeeded())
-	{
-		PunchSoundCue = USoundCueObject.Object;
+	//static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
+	//if (USoundCueObject.Succeeded())
+	//{
+	//	PunchSoundCue = USoundCueObject.Object;
 
-		PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
-		PunchAudioComponent->AttachTo(RootComponent);
+	//	PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
+	//	PunchAudioComponent->AttachTo(RootComponent);
 
-	}
+	//}
 
 }
 
@@ -37,10 +37,10 @@ void APentiumDual_AICharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (PunchSoundCue && PunchAudioComponent)
-	{
-		PunchAudioComponent->SetSound(PunchSoundCue);
-	}
+	//if (PunchSoundCue && PunchAudioComponent)
+	//{
+	//	PunchAudioComponent->SetSound(PunchSoundCue);
+	//}
 }
 
 // Called every frame
@@ -61,10 +61,10 @@ APatrolPath* APentiumDual_AICharacter::get_patrol_path()
 	return patrol_path;
 }
 
-UAnimMontage* APentiumDual_AICharacter::get_montage() const
-{
-	return melee_fist_attack_montage;
-}
+//UAnimMontage* APentiumDual_AICharacter::get_montage() const
+//{
+//	return melee_fist_attack_montage;
+//}
 
 UBehaviorTree* APentiumDual_AICharacter::GetBehaviorTree() const
 {

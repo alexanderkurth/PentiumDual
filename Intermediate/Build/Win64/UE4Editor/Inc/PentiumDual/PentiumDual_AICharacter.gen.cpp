@@ -119,7 +119,7 @@ void EmptyLinkFunctionForGeneratedCodePentiumDual_AICharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APentiumDual_AICharacter, 3524150136);
+	IMPLEMENT_CLASS(APentiumDual_AICharacter, 1178200924);
 	template<> PENTIUMDUAL_API UClass* StaticClass<APentiumDual_AICharacter>()
 	{
 		return APentiumDual_AICharacter::StaticClass();

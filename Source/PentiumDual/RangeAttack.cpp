@@ -20,23 +20,23 @@ EBTNodeResult::Type URangeAttack::ExecuteTask(UBehaviorTreeComponent& owner_comp
 {
 	//get npc
 
-	if (APentiumDual_AIController* const cont = Cast<APentiumDual_AIController>(owner_comp.GetAIOwner()))
-	{
-		if (APentiumDual_AICharacter* const npc = Cast<APentiumDual_AICharacter>(cont->GetPawn()))
-		{
-			if (montage_has_finished(npc))
-			{
-				npc->AttackInput();
-			}
-		}
-	
-		FinishLatentTask(owner_comp, EBTNodeResult::Succeeded);
-		return EBTNodeResult::Succeeded;
-	}
+	//if (APentiumDual_AIController* const cont = Cast<APentiumDual_AIController>(owner_comp.GetAIOwner()))
+	//{
+	//	if (APentiumDual_AICharacter* const npc = Cast<APentiumDual_AICharacter>(cont->GetPawn()))
+	//	{
+	//		if (montage_has_finished(npc))
+	//		{
+	//			npc->AttackInput();
+	//		}
+	//	}
+	//
+	//	FinishLatentTask(owner_comp, EBTNodeResult::Succeeded);
+	//	return EBTNodeResult::Succeeded;
+	//}
 	return EBTNodeResult::Failed;
 }
 
-bool URangeAttack::montage_has_finished(APentiumDual_AICharacter* const npc)
-{
-	return npc->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(npc->get_montage());
-}
+//bool URangeAttack::montage_has_finished(APentiumDual_AICharacter* const npc)
+//{
+//	return npc->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(npc->get_montage());
+//}

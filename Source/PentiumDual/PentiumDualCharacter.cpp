@@ -62,15 +62,15 @@ APentiumDualCharacter::APentiumDualCharacter()
 		melee_fist_attack_montage = MeleeFistAttackMontageObecjt.Object;
 	}*/
 
-	static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
-	if (USoundCueObject.Succeeded())
-	{
-		PunchSoundCue = USoundCueObject.Object;
+	//static ConstructorHelpers::FObjectFinder<USoundCue> USoundCueObject(TEXT("SoundCue'/Game/Sound/PunchSoundCue.PunchSoundCue'"));
+	//if (USoundCueObject.Succeeded())
+	//{
+	//	PunchSoundCue = USoundCueObject.Object;
 
-		PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
-		PunchAudioComponent->AttachTo(RootComponent);
+	//	PunchAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("PunchAudioComponent"));
+	//	PunchAudioComponent->AttachTo(RootComponent);
 
-	}
+	//}
 	
 
 }
@@ -151,10 +151,10 @@ void APentiumDualCharacter::BeginPlay()
 	
 
 
-	if (PunchSoundCue && PunchAudioComponent)
-	{
-		PunchAudioComponent->SetSound(PunchSoundCue);
-	}
+	//if (PunchSoundCue && PunchAudioComponent)
+	//{
+	//	PunchAudioComponent->SetSound(PunchSoundCue);
+	//}
 
 }
 

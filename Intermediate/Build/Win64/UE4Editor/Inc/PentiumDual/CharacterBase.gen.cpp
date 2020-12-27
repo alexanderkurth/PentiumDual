@@ -21,9 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ACharacterBase::execOnAttackHit)
 	{
@@ -104,7 +102,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = \"Collision\", meta = (AllowPrivateAccess = \"true\"))\n//class UBoxComponent* left_fist_collision_box;\n//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = \"Collision\", meta = (AllowPrivateAccess = \"true\"))\n//class UBoxComponent* right_fist_collision_box;\n" },
 		{ "ModuleRelativePath", "CharacterBase.h" },
+		{ "ToolTip", "UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = \"Collision\", meta = (AllowPrivateAccess = \"true\"))\nclass UBoxComponent* left_fist_collision_box;\nUPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = \"Collision\", meta = (AllowPrivateAccess = \"true\"))\nclass UBoxComponent* right_fist_collision_box;" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACharacterBase, nullptr, "OnAttackHit", nullptr, nullptr, sizeof(CharacterBase_eventOnAttackHit_Parms), Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C80401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACharacterBase_OnAttackHit_Statics::Function_MetaDataParams)) };
@@ -129,21 +129,9 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_melee_fist_attack_montage_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_melee_fist_attack_montage;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PunchAudioComponent_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PunchAudioComponent;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_right_fist_collision_box_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_right_fist_collision_box;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_left_fist_collision_box_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_left_fist_collision_box;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -153,7 +141,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_PentiumDual,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACharacterBase_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACharacterBase_OnAttackHit, "OnAttackHit" }, // 2885829359
+		{ &Z_Construct_UFunction_ACharacterBase_OnAttackHit, "OnAttackHit" }, // 3002317227
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::Class_MetaDataParams[] = {
@@ -163,14 +151,6 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_melee_fist_attack_montage_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Animation" },
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_melee_fist_attack_montage = { "melee_fist_attack_montage", nullptr, (EPropertyFlags)0x0020080000010015, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, melee_fist_attack_montage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_melee_fist_attack_montage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_melee_fist_attack_montage_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_PunchAudioComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Audio" },
@@ -179,29 +159,8 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_PunchAudioComponent = { "PunchAudioComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, PunchAudioComponent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_PunchAudioComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_PunchAudioComponent_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_right_fist_collision_box_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Collision" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_right_fist_collision_box = { "right_fist_collision_box", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, right_fist_collision_box), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_right_fist_collision_box_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_right_fist_collision_box_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACharacterBase_Statics::NewProp_left_fist_collision_box_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Collision" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterBase.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACharacterBase_Statics::NewProp_left_fist_collision_box = { "left_fist_collision_box", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACharacterBase, left_fist_collision_box), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACharacterBase_Statics::NewProp_left_fist_collision_box_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACharacterBase_Statics::NewProp_left_fist_collision_box_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACharacterBase_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_melee_fist_attack_montage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_PunchAudioComponent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_right_fist_collision_box,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACharacterBase_Statics::NewProp_left_fist_collision_box,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACharacterBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACharacterBase>::IsAbstract,
@@ -230,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeCharacterBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACharacterBase, 1789932159);
+	IMPLEMENT_CLASS(ACharacterBase, 1592871293);
 	template<> PENTIUMDUAL_API UClass* StaticClass<ACharacterBase>()
 	{
 		return ACharacterBase::StaticClass();

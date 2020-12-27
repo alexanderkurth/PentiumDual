@@ -1,0 +1,5 @@
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\Definitions.PentiumDual.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Source\PentiumDual/WeaponShotgun.h
+C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Inc\PentiumDual\WeaponShotgun.generated.h

@@ -33,7 +33,7 @@ public:
 
 	//void melee_attack();
 
-	UAnimMontage* get_montage() const;
+	//UAnimMontage* get_montage() const;
 
 	UBehaviorTree* GetBehaviorTree() const;
 

@@ -29,8 +29,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
-	class USoundCue* PunchSoundCue;
+	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Sound, meta = (AllowPrivateAccess = "true"))
+	//class USoundCue* PunchSoundCue;
 
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
