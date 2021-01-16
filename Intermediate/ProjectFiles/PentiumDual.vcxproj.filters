@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PentiumDual.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{90A55334-5C24-42C2-BAEF-38FF8BE70308}</UniqueIdentifier>
+      <UniqueIdentifier>{09756232-9EC6-4BDE-8BC4-88AFECE985A2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PentiumDual.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{30881CC0-8B85-4D22-B7BA-6FAEBE74BD4C}</UniqueIdentifier>
+      <UniqueIdentifier>{F1ADDD93-0E84-4AF9-A035-F3FD834271E7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PentiumDual">
-      <UniqueIdentifier>{8F532D12-7CDE-4861-A7D2-05078D16A5FC}</UniqueIdentifier>
+      <UniqueIdentifier>{DAC4C3AA-A4F7-4369-9456-1EB24F5FB46A}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\PentiumDual\ai_tags.h">
       <Filter>Source\PentiumDual</Filter>
@@ -47,6 +47,12 @@
       <Filter>Source\PentiumDual</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PentiumDual\AttackStartNotifyState.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\BasicSplineController.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\BasicSplineController.h">
       <Filter>Source\PentiumDual</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PentiumDual\blackboard_keys.h">
@@ -173,6 +179,18 @@
       <Filter>Source\PentiumDual</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PentiumDual\StopInvestigating.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\Weapon.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\Weapon.h">
+      <Filter>Source\PentiumDual</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PentiumDual\WeaponShotgun.cpp">
+      <Filter>Source\PentiumDual</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PentiumDual\WeaponShotgun.h">
       <Filter>Source\PentiumDual</Filter>
     </ClInclude>
   </ItemGroup>

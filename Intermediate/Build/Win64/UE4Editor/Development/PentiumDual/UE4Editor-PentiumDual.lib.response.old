@@ -29,6 +29,8 @@
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\RangeAttack.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\RangeWeaponBase.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\StopInvestigating.cpp.obj"
+"C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\Weapon.cpp.obj"
+"C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\WeaponShotgun.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\AttackNotifyState.gen.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\AttackStartNotifyState.gen.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\BTService_ChangeSpeed.gen.cpp.obj"
@@ -51,6 +53,8 @@
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\RangeAttack.gen.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\RangeWeaponBase.gen.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\StopInvestigating.gen.cpp.obj"
+"C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\Weapon.gen.cpp.obj"
+"C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\WeaponShotgun.gen.cpp.obj"
 "C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\Default.rc2.res"
 /OUT:"C:\Users\Alexa\Documents\Unreal Projects\PentiumDual\Intermediate\Build\Win64\UE4Editor\Development\PentiumDual\UE4Editor-PentiumDual.lib"
 /INCLUDE:IMPLEMENT_MODULE_PentiumDual
