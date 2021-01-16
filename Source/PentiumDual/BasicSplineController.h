@@ -61,6 +61,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SplineController")
 	TArray<FVector> pointArray;
 
+
+
 public:	
 	virtual void Tick(float DeltaTime) override;
 

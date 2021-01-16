@@ -9,6 +9,7 @@
 #include "Math/Vector.h"
 #include "Math/Plane.h"
 #include "Math/UnrealMathUtility.h"
+#include "GenericPlatform/GenericPlatformMath.h"
 
 ABasicSplineController::ABasicSplineController()
 {
@@ -80,13 +81,16 @@ float ABasicSplineController::Curve(float x, float y)
 void ABasicSplineController::BeginPlay()
 {
 	Super::BeginPlay();
-	TrianglePointCallRecursiv(point, treeNumberSection);
+	//TrianglePointCallRecursiv(point, treeNumberSection);
 }
 
 void ABasicSplineController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//TriangulateNewPoint(point, angleX, angleY, angleZ);
+	//TriangulateNewPoint(point, angleX, angleY, angleZ, false);
+	DrawDebugLine(GetWorld(), FVector(0, 0, 0), FVector(0, 0, 100), FColor::Red);
+	FVector(0, 0, 100).RotateAngleAxis(10, FVector(1, 0, 0));
+	DrawDebugLine(GetWorld(), FVector(0, 0, 100), FVector(0, 0, 100)+FVector(0, 0, 100).RotateAngleAxis(10, FVector(1, 0, 0)), FColor::Red);
 }
 
 FVector ABasicSplineController::TriangulateNewPoint(FVector startPoint, float _angleX, float _angleY, float _angleZ, bool isPersistent)
@@ -111,7 +115,7 @@ FVector ABasicSplineController::TriangulateNewPoint(FVector startPoint, float _a
 
 	DrawDebugLine(GetWorld(), startPoint, centroid, FColor::Red, isPersistent);
 
-
+	  
 	return centroid;
 }
 
@@ -120,7 +124,8 @@ void ABasicSplineController::TriangulatePointsRecursiv(FVector startPoint, FVect
 	if (recursionLevel > 0)
 	{
 		FVector _newStartPoint =  (direction );
-		FVector _direction = TriangulateNewPoint(_newStartPoint, angleX, angleY, angleZ * (offset * recursionLevel), true);
+		float r = RandomOffset(1.0, 1.0);
+		FVector _direction = TriangulateNewPoint(_newStartPoint, direction.X*r, direction.Y * r, angleZ, true);
 		TriangulatePointsRecursiv(_newStartPoint, _direction, recursionLevel - 1);
 	}
 
@@ -129,7 +134,7 @@ void ABasicSplineController::TriangulatePointsRecursiv(FVector startPoint, FVect
 void ABasicSplineController::TrianglePointCallRecursiv(FVector startPoint, int recursionLevel)
 {
 	FVector _newStartPoint = startPoint;
-	FVector _direction = TriangulateNewPoint(_newStartPoint, angleX, angleY, angleZ * (offset * recursionLevel), true);
+	FVector _direction = FVector(PI, PI/2, 0);//TriangulateNewPoint(_newStartPoint, angleX, angleY, angleZ * (offset * recursionLevel), true);
 
 	TriangulatePointsRecursiv(_newStartPoint, _direction, recursionLevel - 1);
 }
