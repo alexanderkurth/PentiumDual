@@ -82,4 +82,7 @@ public:
 	void TrianglePointCallRecursiv(FVector startPoint, int recursionLevel);
 
 	float RandomOffset(float min, float max);
+
+	void TreePointsRecurive(FVector startPoint, FVector angle, int recursionCall, bool b);
+
 };

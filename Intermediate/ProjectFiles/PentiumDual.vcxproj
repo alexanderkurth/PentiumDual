@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{03F2D466-B136-4D7D-AE6A-EC1858169827}</ProjectGuid>
+    <ProjectGuid>{1C4A9057-301A-453E-ADA5-2FDA79DCECF4}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>PentiumDual</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>

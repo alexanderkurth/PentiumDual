@@ -81,16 +81,13 @@ float ABasicSplineController::Curve(float x, float y)
 void ABasicSplineController::BeginPlay()
 {
 	Super::BeginPlay();
-	//TrianglePointCallRecursiv(point, treeNumberSection);
+	//TreePointsRecurive(point, FVector(0, 0, 100),treeNumberSection, true);
+	TrianglePointCallRecursiv(point, 100);
 }
 
 void ABasicSplineController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//TriangulateNewPoint(point, angleX, angleY, angleZ, false);
-	DrawDebugLine(GetWorld(), FVector(0, 0, 0), FVector(0, 0, 100), FColor::Red);
-	FVector(0, 0, 100).RotateAngleAxis(10, FVector(1, 0, 0));
-	DrawDebugLine(GetWorld(), FVector(0, 0, 100), FVector(0, 0, 100)+FVector(0, 0, 100).RotateAngleAxis(10, FVector(1, 0, 0)), FColor::Red);
 }
 
 FVector ABasicSplineController::TriangulateNewPoint(FVector startPoint, float _angleX, float _angleY, float _angleZ, bool isPersistent)
@@ -124,7 +121,7 @@ void ABasicSplineController::TriangulatePointsRecursiv(FVector startPoint, FVect
 	if (recursionLevel > 0)
 	{
 		FVector _newStartPoint =  (direction );
-		float r = RandomOffset(1.0, 1.0);
+		float r = RandomOffset(0, 0.5);
 		FVector _direction = TriangulateNewPoint(_newStartPoint, direction.X*r, direction.Y * r, angleZ, true);
 		TriangulatePointsRecursiv(_newStartPoint, _direction, recursionLevel - 1);
 	}
@@ -134,7 +131,8 @@ void ABasicSplineController::TriangulatePointsRecursiv(FVector startPoint, FVect
 void ABasicSplineController::TrianglePointCallRecursiv(FVector startPoint, int recursionLevel)
 {
 	FVector _newStartPoint = startPoint;
-	FVector _direction = FVector(PI, PI/2, 0);//TriangulateNewPoint(_newStartPoint, angleX, angleY, angleZ * (offset * recursionLevel), true);
+	FVector _direction = FVector(PI, PI/2, 0);
+	//TriangulateNewPoint(_newStartPoint, angleX, angleY, angleZ * (offset * recursionLevel), true);
 
 	TriangulatePointsRecursiv(_newStartPoint, _direction, recursionLevel - 1);
 }
@@ -143,4 +141,25 @@ float ABasicSplineController::RandomOffset(float min, float max)
 {
 	return FMath::RandRange(min, max);
 }
+
+void ABasicSplineController::TreePointsRecurive(FVector startPoint, FVector angle, int recursionCall, bool b)
+{
+	if (recursionCall > 0)
+	{
+		int _angleY = RandomOffset(-15, 15);
+		int _angleZ = RandomOffset(-15, 15);
+		int _distance = 10;
+		angle.Normalize();
+		FVector newDirectionTemp = angle.RotateAngleAxis(_angleY, FVector(0, 1, 0));
+		FVector newDirection = newDirectionTemp.RotateAngleAxis(_angleZ, FVector(1, 0, 0));
+		FVector newStartPoint = startPoint + newDirection * _distance;
+ 
+		DrawDebugPoint(GetWorld(), startPoint, 10, FColor::Green, b);
+		DrawDebugLine(GetWorld(), startPoint,newStartPoint, FColor::Red, b);
+
+		TreePointsRecurive(newStartPoint, newStartPoint, recursionCall - 1, b);
+
+	}
+}
+
 

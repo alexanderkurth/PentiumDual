@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PentiumDual.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{09756232-9EC6-4BDE-8BC4-88AFECE985A2}</UniqueIdentifier>
+      <UniqueIdentifier>{E726EB99-767F-407C-B5B0-4C02FC3C9E17}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PentiumDual.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F1ADDD93-0E84-4AF9-A035-F3FD834271E7}</UniqueIdentifier>
+      <UniqueIdentifier>{624F4C89-F63B-43F2-ADCF-E9FD23A1CDBC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PentiumDual">
-      <UniqueIdentifier>{DAC4C3AA-A4F7-4369-9456-1EB24F5FB46A}</UniqueIdentifier>
+      <UniqueIdentifier>{F46F0660-D3F1-486E-A8C9-BA75BEA3A963}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\PentiumDual\ai_tags.h">
       <Filter>Source\PentiumDual</Filter>
